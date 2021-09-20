@@ -1,4 +1,4 @@
-# Two-Factor-Authentication-for-SSH-on-CentOS-8
+# Two Factor Authentication for SSH on CentOS-8
   
 ``dnf install openssh-server``   
 ``dnf install qrencode-libs.x86_64``   
