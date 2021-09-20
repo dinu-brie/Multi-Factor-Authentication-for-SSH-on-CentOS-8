@@ -4,6 +4,7 @@
 ``dnf install qrencode-libs.x86_64``   
 ``yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm``   
 ``yum install google-authenticator``  
+```google-authenticator```   
 Scan the QR Code with your preffered authenticator app   
 Backup secrets   
 
