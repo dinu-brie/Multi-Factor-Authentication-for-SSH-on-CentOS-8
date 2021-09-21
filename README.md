@@ -19,9 +19,28 @@ Edit:
 ``nano /etc/ssh/sshd_config`` 
 
 Search and change:   
-``ChallengeResponseAuthentication yes``  
+``ChallengeResponseAuthentication no`` to ``yes``   
 Restart sshd service   
 ``systemctl restart sshd.service``   
+
+# Grant special access to bypass two factor 
+Edit:   
+`` nano /etc/security/access.conf``   
+and add dependig on your case:   
+
+Allow specific IP   
+``+:ALL:192.160.1.1``   
+Allow entire network   
+``+:ALL:192.168.1.1/24``   
+Allow specific user from secific IP   
+``+:john:192.168.1.1``   
+
+Add:   
+``auth [success=1 default=ignore] pam_access.so accessfile=/etc/security/access.conf``  
+in:
+``/etc/pam.d/sshd``   
+just above:   
+``auth required pam_google_authenticator.so``
 
 Logout and try to login again   
 Enjoy
